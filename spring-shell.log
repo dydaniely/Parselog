@@ -1,0 +1,46 @@
+1537972679381:commandListner file.txt
+1537972746547:listen "test.tes"
+1537972757242:hello
+1537972768645:commandListner
+1537972880444:listen test.txt
+1537973145129:listen access.log
+1537990971001:listen accessa.log
+1537991349399:listen  accessa.log
+1537991381726:listen accessa.log
+1537994558642:sa.log
+1537994564796:listen accessa.log
+1538051183601:listen access.log
+1538052422616:com.ef.Parser access.log
+1538052450930:listen access.log
+1538052558090:com.ef.Parser --access.log
+1538052595610:listen --access.log
+1538052612669:listen -- access.log
+1538053065251:listen accessa.log
+1538054672427:listen access.log
+1538058411251:listen --startDate=2017-01-01.13:00:00 --duration=daily --threshold=250
+1538058429393:listen         try {
+1538058511149:listen startDate=2017-01-01.13:00:00 duration=daily threshold=250ily 250
+1538068229020:liste --startDate=2017-01-01.13:00:00 --duration=daily --threshold=250
+1538069830562:listen --startDate=2017-01-01.13:00:00 --duration=daily --threshold=250
+1538070643726:listen 2017-01-01.13:00:00 daily 250
+1538071827315:listen listen --startDate=2017-01-01.13:00:00 --duration=daily 250
+1538071841503:2018-09-27 14:10:27.331 DEBUG 8672 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Returning cached instance of singleton bean 'history'
+1538072049520:listen 2017-01-01.00:00:00 daily 500
+1538072804728:listen 2017-01-01.00:00:00 daily 500.
+1538072825278:listen 2017-01-01.00:00:00 daily 500
+1538076389149:listen 2017-01-01 00:00:00 daily 500
+1538076429559:listen 2017-01-01.00:00:00 daily 500
+1538079837261:listen "c:\\opt\\accessa.log" 2017-01-01.00:00:00 daily 2
+1538079942236:listen "C:/opt/accessa.log" 2017-01-01.00:00:00 daily 2
+1538079989479:listen "C:\\\\opt\\\\accessa.log" 2017-01-01.00:00:00 daily 2
+1538147803490:listen "C:\\\\opt\\\\accessa.log" 2017-01-01.00:00:00 daily 5
+1538147960032:listen "C:\\\\opt\\\\accessa.log" 2017-01-01.00:00:00 daily 2
+1538156002181:com.ef.parser c;
+1538156372042:com.ef.parser --accesslog=C:\\\\opt\\\\accessa.log --startDate=2017-01-01.00:00:00 --duration=daily --threshold=2
+1538159615181:help
+1538159632423:exit
+1538160170742:com.ef.parser --accesslog=C:\\\\opt\\\\accessa.log --startDate=2017-01-01.00:00:00 --duration=daily
+1538165063429:com.ef.parser --accesslog=C:\\\\opt\\\\  --startDate=2017-01-01.00:00:00 --duration=daily --threshold=500
+1538167439646:java -cp "parser.jar" com.ef.Parser   --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1538167477888:com.ef.parser   --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1538403302262:listen   /var/lib/access.log  2017-01-01.13:00:00 hourly 100
