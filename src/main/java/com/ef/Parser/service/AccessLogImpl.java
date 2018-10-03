@@ -5,9 +5,7 @@ import com.ef.Parser.dao.IpDto;
 import com.ef.Parser.dao.ThreatDao;
 import com.ef.Parser.domain.ThreatIP;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -45,11 +43,7 @@ public class AccessLogImpl implements AccessLog {
      */
     @Override
     public String logParser(String sourceReqPath, String startDate, String duration, long threshold) throws FileNotFoundException {
-
-
-
         File folder = new File(sourceReqPath);
-
         File[] responseFiles = folder.listFiles();
       assert responseFiles != null;
         for (File completeFile : responseFiles) {
