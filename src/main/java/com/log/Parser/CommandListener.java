@@ -1,6 +1,6 @@
-package com.ef.Parser;
+package com.log.Parser;
 
-import com.ef.Parser.service.AccessLog;
+import com.log.Parser.service.AccessLog;
 import org.jline.utils.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
@@ -28,7 +28,7 @@ public class CommandListener {
      * @param threshold
      * @return
      */
-    @ShellMethod(key = "com.ef.Parser", value = "Import access log file to DB ,Syntax : com.ef.Parser /folderPath/ --startDate=2017-01-01.13:00:00 --duration=hourly/daily  --threshold=100")
+    @ShellMethod(key = "com.log.Parser", value = "Import access log file to DB ,Syntax : com.log.Parser /folderPath/ --startDate=2017-01-01.13:00:00 --duration=hourly/daily  --threshold=100")
     public String parser(@ShellOption String path,
                          @ShellOption String startDate,
                          @ShellOption String duration,
@@ -50,6 +50,4 @@ public class CommandListener {
             }
         }
     }
-
-
 }

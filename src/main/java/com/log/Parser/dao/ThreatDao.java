@@ -1,6 +1,6 @@
-package com.ef.Parser.dao;
+package com.log.Parser.dao;
 
-import com.ef.Parser.domain.ThreatIP;
+import com.log.Parser.domain.ThreatIP;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

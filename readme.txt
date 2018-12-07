@@ -9,7 +9,7 @@ Requirement
   4. Type command in the Shell console
   e.g
 
-  shell:> com.ef.Parser com.ef.Parser --accesslog=/var/lib/tomcat8/backup/ --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+  shell:> com.log.Parser com.log.Parser --accesslog=/var/lib/tomcat8/backup/ --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
 
   Note:  plese provide  Folder path , then the system will iterate on each file  to store it into Db
 

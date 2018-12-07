@@ -1,6 +1,6 @@
-package com.ef.Parser.dao;
+package com.log.Parser.dao;
 
-import com.ef.Parser.domain.Period;
+import com.log.Parser.domain.Period;
 import org.hibernate.Session;
 import org.hibernate.transform.AliasToBeanResultTransformer;
 import org.hibernate.type.StandardBasicTypes;

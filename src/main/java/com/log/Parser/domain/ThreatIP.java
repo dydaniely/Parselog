@@ -1,4 +1,4 @@
-package com.ef.Parser.domain;
+package com.log.Parser.domain;
 
 
 

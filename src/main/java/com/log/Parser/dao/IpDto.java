@@ -1,4 +1,4 @@
-package com.ef.Parser.dao;
+package com.log.Parser.dao;
 
 public class IpDto {
     private String ip;

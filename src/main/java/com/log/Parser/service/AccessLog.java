@@ -1,4 +1,4 @@
-package com.ef.Parser.service;
+package com.log.Parser.service;
 
 import java.io.FileNotFoundException;
 

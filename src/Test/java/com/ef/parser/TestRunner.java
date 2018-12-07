@@ -1,4 +1,4 @@
-package com.ef.parser;
+package com.log.parser;
 
 import org.junit.Test;
 import org.springframework.boot.ApplicationArguments;

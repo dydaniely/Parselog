@@ -1,11 +1,12 @@
-package com.ef.Parser.service;
+package com.log.Parser.service;
 
-import com.ef.Parser.dao.BaseDao;
-import com.ef.Parser.dao.IpDto;
-import com.ef.Parser.dao.ThreatDao;
-import com.ef.Parser.domain.ThreatIP;
+import com.log.Parser.dao.BaseDao;
+import com.log.Parser.dao.IpDto;
+import com.log.Parser.dao.ThreatDao;
+import com.log.Parser.domain.ThreatIP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,12 +24,11 @@ import java.util.stream.Stream;
 @Service
 public class AccessLogImpl implements AccessLog {
     @Autowired
-    private com.ef.Parser.dao.AccessLogDao AccessLogDao;
+    private com.log.Parser.dao.AccessLogDao AccessLogDao;
     @Autowired
     private BaseDao baseDao;
     @Autowired
     private ThreatDao threatDao;
-
 
     /**
      * Checks files under sourceReqPath and process based on delim
@@ -44,11 +44,11 @@ public class AccessLogImpl implements AccessLog {
     @Override
     public String logParser(String sourceReqPath, String startDate, String duration, long threshold) throws FileNotFoundException {
         File folder = new File(sourceReqPath);
-        File[] responseFiles = folder.listFiles();
-      assert responseFiles != null;
-        for (File completeFile : responseFiles) {
-            if (completeFile.isFile()) {
-                File file = Paths.get(completeFile.getPath()).toAbsolutePath().toFile();
+        File[] responslogiles = folder.listFiles();
+        assert responslogiles != null;
+        for (File completlogile : responslogiles) {
+            if (completlogile.isFile()) {
+                File file = Paths.get(completlogile.getPath()).toAbsolutePath().toFile();
                 try {
                     Stream<String> stringStream = Files.lines(file.toPath());
                     List<String> rowLines = stringStream.collect(Collectors.toList());
@@ -61,20 +61,21 @@ public class AccessLogImpl implements AccessLog {
                 printAndStoreThreatIp(startDate, duration, threshold);
             }
         }
-        return new Date() + ":: Parsing Completed - " + responseFiles.length;
+        return new Date() + ":: Parsing Completed - " + responslogiles.length;
     }
 
     /**
      * Print and Store IP address attempts over threshold
-     * DatatimeFormat is a bit different  for query purpose
+     * Datatimlogormat is a bit different  for query purpose
+     *
      * @param startDate
      * @param duration
      * @param threshold
      */
     @Override
     public void printAndStoreThreatIp(String startDate, String duration, long threshold) {
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd.HH:mm:ss");
-        LocalDateTime dateTime=LocalDateTime.parse(startDate,timeFormatter);
+        DateTimeFormatter timlogormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd.HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(startDate, timlogormatter);
         List<IpDto> accessLogs = baseDao.findByAccessDateAndThreshold(dateTime, duration, threshold);
         if (accessLogs.size() > 0) {
             List<ThreatIP> threatIPS = new ArrayList<>();
@@ -93,14 +94,14 @@ public class AccessLogImpl implements AccessLog {
     }
 
     private void parseToDatabase(List<String> rowLines) throws ParseException {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+        DateTimeFormatter dateTimlogormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
         System.out.println("Parsing Started , please wait ");
-        List<com.ef.Parser.domain.AccessLog> accessLogs = new ArrayList<>();
+        List<com.log.Parser.domain.AccessLog> accessLogs = new ArrayList<>();
         System.out.println("# parsing lines  " + rowLines.size());
         for (String s : rowLines) {
-            com.ef.Parser.domain.AccessLog accessLog = new com.ef.Parser.domain.AccessLog();
+            com.log.Parser.domain.AccessLog accessLog = new com.log.Parser.domain.AccessLog();
             String[] x = s.split("\\|");
-            accessLog.setAccessDate(LocalDateTime.parse(x[0], dateTimeFormatter));
+            accessLog.setAccessDate(LocalDateTime.parse(x[0], dateTimlogormatter));
             accessLog.setIp(x[1]);
             accessLog.setRequestType(x[2]);
             accessLog.setHttpStatus(x[3]);

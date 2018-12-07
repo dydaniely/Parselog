@@ -1,4 +1,4 @@
-package com.ef.Parser;
+package com.log.Parser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

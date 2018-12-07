@@ -1,4 +1,4 @@
-package com.ef.parser;
+package com.log.parser;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -27,17 +27,17 @@ public class ParserTest {
     @Test
     public void whenTheCommandWorksReturnTrue() throws IOException {
 /* given */
-       Assertions.assertThat(shell.evaluate(() ->"com.ef.Parser --startDate=2017-01-01.15:00:00 --duration=hourly --threshold=200")).isNotNull();
-//            String sampleFilePath=Paths.get("src/Test/resources/").toAbsolutePath().toString();
+       Assertions.assertThat(shell.evaluate(() ->"com.log.Parser --startDate=2017-01-01.15:00:00 --duration=hourly --threshold=200")).isNotNull();
+//            String sampllogilePath=Paths.get("src/Test/resources/").toAbsolutePath().toString();
 //        shell.run(new InputProvider() {
 //            private boolean invoked = false;
-//                String defaultFilePath="src/Test/resources/";
+//                String dlogaultFilePath="src/Test/resources/";
 //
 //            @Override
 //            public Input readInput() {
 //                if (!invoked) {
 //                    invoked = true;
-//                    return () -> "com.ef.Parser --accesslog"+sampleFilePath + "--startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100";
+//                    return () -> "com.log.Parser --accesslog"+sampllogilePath + "--startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100";
 //                } else {
 //                    return () -> "exit";
 //                }

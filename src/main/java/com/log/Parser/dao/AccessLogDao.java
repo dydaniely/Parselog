@@ -1,6 +1,6 @@
-package com.ef.Parser.dao;
+package com.log.Parser.dao;
 
-import com.ef.Parser.domain.AccessLog;
+import com.log.Parser.domain.AccessLog;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
