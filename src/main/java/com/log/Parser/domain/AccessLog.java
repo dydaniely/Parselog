@@ -1,29 +1,33 @@
 package com.log.Parser.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 public class AccessLog {
     @Id
     @GeneratedValue
-    private long Id;
+    private long id;
     private String ip;
     private LocalDateTime accessDate;
     private String requestType;
     private String httpStatus;
     private String userAgent;
     private String status;
+    private LocalTime responseTime;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "logFileId")
+    private LogFile logFile;
 
     public long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(long id) {
-        Id = id;
+        this.id = id;
     }
 
 
@@ -74,5 +78,21 @@ public class AccessLog {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public LocalTime getResponseTime() {
+        return responseTime;
+    }
+
+    public void setResponseTime(LocalTime responseTime) {
+        this.responseTime = responseTime;
+    }
+
+    public LogFile getLogFile() {
+        return logFile;
+    }
+
+    public void setLogFile(LogFile logFile) {
+        this.logFile = logFile;
     }
 }

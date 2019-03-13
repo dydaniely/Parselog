@@ -48,3 +48,32 @@
 1544200382464:ls
 1544200384199:show
 1544200390041:clear
+1552329782939:com.log.Parser --accesslog=C:\\Users\\ISDDYT\\Desktop\\log01.txt --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330003559:com.log.Parser --accesslog="C:\\Users\\ISDDYT\\Desktop\\log01.txt" --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330042586:com.log.Parser --accesslog=C:\\Users\\ISDDYT\\Desktop\\log01.txt --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330086034:com.log.Parser --accesslog='C:\\Users\\ISDDYT\\Desktop\\log01.txt' --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330121545:com.log.Parser --accesslog=C:\\\\Users\\\\ISDDYT\\\\Desktop\\\\log01.txt --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330371152:com.log.Parser --accesslog=C:\\Users\\ISDDYT\\Desktop\\log01.txt --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330422903:com.log.Parser --accesslog=C:\\\\logg --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330751136:com.log.Parser --accesslog=C:\\logg --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552330778940:com.log.Parser --accesslog=C:\\\\logg --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100
+1552395387431:com.log.Parser "C:\\\\logg" --startDate=2017-01-01 --duration=hourly --threshold=100
+1552395585295:com.log.Parser --path="C:\\\\logg" --startDate=2017-01-01 --duration=hourly --threshold=100
+1552395901692:com.log.Parser --path="C:\\logg" -startDate="2017-01-01" --duration=hourly --threshold=100
+1552395975926:com.log.Parser --path='C:\\logg' -startDate="2017-01-01" --duration=hourly --threshold=100
+1552395989364:com.log.Parser --path="C:\\\\logg" -startDate="2017-01-01" --duration=hourly --threshold=100
+1552402044913:com.log.Parser --path="C:\\\\logg" --startDate="2017-01-01" --duration="hourly" --threshold="100"
+1552404287342:com.log.Parser --path="C:\\\\logg" --startDate="2018-01-01" --duration="hourly" --threshold="100"
+1552405461989:com.log.Parser --="C:\\\\logg"
+1552405569906:com.log.Parser --path="C:\\\\logg" -startDate="2017-01-01" --duration="hourly" --threshold="100"
+1552405729734:com.log.Parser --path="C:\\\\logg" --startDate="2017-01-01" --duration="hourly" --threshold="100"
+1552410383710:com.log.Parser --path="C:\\\\logg" --startDate="2017-09-09" --duration="hourly" threshold="100"
+1552411671529:com.log.Parser --path ="C:\\\\logg\n"
+1552412444766:com.log.Parser --path="C:\\\\logg"
+1552413093850:parse --path="c:\\\\logg"
+1552413362245:parse --path="C:\\logg"
+1552413386060:parse --path ="c:\\\\logg"
+1552413753860:parse --path ="C:\\\\parse"
+1552413793703:parse --path="C:\\\\logg"
+1552415521165:y
+1552415528955:Exit

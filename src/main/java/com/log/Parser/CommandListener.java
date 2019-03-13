@@ -8,45 +8,49 @@ import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Objects;
 
 @ShellComponent
 public class CommandListener {
 
-    public CommandListener() {
+    @Autowired
+    public CommandListener(AccessLog accessLog) {
+        this.accessLog = accessLog;
     }
 
-    @Autowired
-    private AccessLog accessLog;
+    private final AccessLog accessLog;
 
 
     /**
-     *  Parse  file to database and Prints IP address attempts based
-     *  based parameter
+     * Parse  file to database and Prints IP address attempts based
+     * based parameter
+     *
      * @param path
      * @param startDate
      * @param duration
      * @param threshold
      * @return
      */
-    @ShellMethod(key = "com.log.Parser", value = "Import access log file to DB ,Syntax : com.log.Parser /folderPath/ --startDate=2017-01-01.13:00:00 --duration=hourly/daily  --threshold=100")
+    @ShellMethod(key = "parse", value = "Import access log file to DB ,Syntax : com.log.Parser /folderPath/ --startDate=2017-01-01.13:00:00 --duration=hourly/daily  --threshold=100")
     public String parser(@ShellOption String path,
-                         @ShellOption String startDate,
-                         @ShellOption String duration,
-                         @ShellOption String threshold) {
+                         @ShellOption(defaultValue = "true") String startDate,
+                         @ShellOption(defaultValue = "true") String duration,
+                         @ShellOption(defaultValue = "true") String threshold) {
         {
             try {
                 String[] paths = path.split("=");
-                String[] startDates = startDate.split("=");
-                String[] durations = duration.split("=");
-                String[] thresholds = threshold.split("=");
-                if ((paths.length > 1 && startDates.length > 1 && durations.length > 1 && thresholds.length > 1)) {
-                    return accessLog.logParser(paths[1], startDates[1], durations[1], Long.parseLong(thresholds[1]));
+                if (paths.length > 1)  {
+                    return accessLog.logParser(paths[1]);
                 } else {
                     return "Make sure you input the parameter correctly";
                 }
             } catch (FileNotFoundException e) {
                 Log.error("File not found");
                 return "file not found";
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "Error on parsing";
             }
         }
     }

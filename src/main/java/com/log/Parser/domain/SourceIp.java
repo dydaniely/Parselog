@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class ThreatIP
+public class SourceIp
 {
     @Id
     @GeneratedValue

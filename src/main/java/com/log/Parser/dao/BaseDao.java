@@ -8,8 +8,7 @@ import java.util.List;
 @Repository
 @Transactional
 public interface BaseDao {
-
-    public List<IpDto> findByAccessDateAndThreshold(LocalDateTime date, String duration, long l);
+    List<IpDto> findByAccessDateAndThreshold(LocalDateTime date, String duration, long l);
 
 
 }
