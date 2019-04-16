@@ -77,3 +77,7 @@
 1552413793703:parse --path="C:\\\\logg"
 1552415521165:y
 1552415528955:Exit
+1552499677227:parse --path="C:\\\\logg"
+1552918637192:parse --path="C:\\logg"
+1552918655459:parse --path=C:\\\\logg
+1552998110005:parse --path="C:\\\\logg"

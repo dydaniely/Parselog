@@ -71,7 +71,7 @@ public class AccessLogImpl implements AccessLog {
 //                printAndStoreThreatIp(startDate, duration, threshold);
             }
         }
-        return new Date() + ":: Parsing Completed - " + responseLogFiles.length;
+        return LocalDate.now().toString() + "- Parsing Completed - " + responseLogFiles.length;
     }
 
     private LogFile logFileWrapper(File completLogile) throws IOException {
@@ -131,11 +131,13 @@ public class AccessLogImpl implements AccessLog {
             accessLog.setResponseTime(localDateTime.toLocalTime());
             accessLog.setRequestType(x[5].replaceAll("\"",""));
             accessLog.setHttpStatus(x[8]);
+            accessLog.setStatus(x[9]);
             accessLog.setUserAgent(x[6]);
             accessLog.setLogFile(logFile);
             accessLogs.add(accessLog);
         }
         System.out.println("Saving to DB");
         AccessLogDao.saveAll(accessLogs);
+        System.out.println(rowLines.size() + " Saving to DB");
     }
 }
